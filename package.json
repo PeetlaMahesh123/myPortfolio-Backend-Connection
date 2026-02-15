@@ -1,15 +1,12 @@
 {
   "name": "mahesh-ai-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "AI Backend for Portfolio",
+  "main": "server.js",
   "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
