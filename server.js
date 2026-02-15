@@ -53,12 +53,14 @@ ${portfolioData}`,
     });
 
   } catch (error) {
-    console.error("OpenAI Error:", error.message);
-    res.status(500).json({
-      reply: "Server error. Check Railway logs.",
-    });
-  }
-});   // ✅ THIS WAS MISSING
+  console.error("🔥 FULL OPENAI ERROR:");
+  console.error(error);
+
+  res.status(500).json({
+    reply: error.message || "Unknown error"
+  });
+}
+  // ✅ THIS WAS MISSING
 
 const PORT = process.env.PORT || 3000;
 
