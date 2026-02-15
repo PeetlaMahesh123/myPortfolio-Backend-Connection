@@ -7,7 +7,7 @@ This assistant answers questions about my skills, projects, experience, and care
 
 ## 🌍 Live Backend
 
-🔗 https://your-project-name.up.railway.app
+🔗 https://myportfolio-backend-connection-production.up.railway.app
 
 ---
 
@@ -187,16 +187,4 @@ GitHub: [https://github.com/PeetlaMahesh123](https://github.com/PeetlaMahesh123)
 
 If you like this project, give it a ⭐ on GitHub!
 
-```
 
----
-
-If you want, I can also give you:
-
-- 🔥 Advanced Professional README with badges  
-- 🏆 Resume-ready project description  
-- 🤖 AI assistant with memory + database  
-- 🛡️ Railway production security setup  
-
-Tell me which level you want 🚀
-```
