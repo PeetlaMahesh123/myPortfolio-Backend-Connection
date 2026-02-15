@@ -50,12 +50,9 @@ app.post("/chat", async (req, res) => {
 
     res.json({ reply: response.choices[0].message.content });
   } catch (error) {
-  console.error("OpenAI Error:", error.response?.data || error.message);
-  res.status(500).json({
-    error: error.message
-  });
+  console.error("OpenAI Error:", error);
+  res.status(500).json({ reply: "Server error. Check logs." });
 }
-
 
 const PORT = process.env.PORT || 3000;
 
