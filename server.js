@@ -35,16 +35,23 @@ app.post("/chat", async (req, res) => {
   try {
     const { message } = req.body;
 
+    if (!message) {
+      return res.status(400).json({ reply: "Message is required" });
+    }
+
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         {
           role: "system",
-          content: `You are Mahesh's AI assistant. 
+          content: `You are Mahesh's AI assistant.
 Answer ONLY using this information:
 ${portfolioData}`,
         },
-        { role: "user", content: message },
+        {
+          role: "user",
+          content: message,
+        },
       ],
     });
 
@@ -53,14 +60,12 @@ ${portfolioData}`,
     });
 
   } catch (error) {
-  console.error("🔥 FULL OPENAI ERROR:");
-  console.error(error);
-
-  res.status(500).json({
-    reply: error.message || "Unknown error"
-  });
-}
-  // ✅ THIS WAS MISSING
+    console.error("OpenAI Error:", error.message);
+    res.status(500).json({
+      reply: error.message,
+    });
+  }
+});
 
 const PORT = process.env.PORT || 3000;
 
