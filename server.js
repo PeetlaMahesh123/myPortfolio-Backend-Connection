@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 const portfolioData = `
@@ -41,22 +41,27 @@ app.post("/chat", async (req, res) => {
         {
           role: "system",
           content: `You are Mahesh's AI assistant. 
-          Answer ONLY using this information:
-          ${portfolioData}`
+Answer ONLY using this information:
+${portfolioData}`,
         },
-        { role: "user", content: message }
-      ]
+        { role: "user", content: message },
+      ],
     });
 
-    res.json({ reply: response.choices[0].message.content });
+    res.json({
+      reply: response.choices[0].message.content,
+    });
+
   } catch (error) {
-  console.error("OpenAI Error:", error);
-  res.status(500).json({ reply: "Server error. Check logs." });
-}
+    console.error("OpenAI Error:", error.message);
+    res.status(500).json({
+      reply: "Server error. Check Railway logs.",
+    });
+  }
+});   // ✅ THIS WAS MISSING
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
