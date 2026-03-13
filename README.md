@@ -10,6 +10,11 @@ This assistant answers questions about my skills, projects, experience, and care
 
 🔗 https://myportfolio-backend-connection-production.up.railway.app
 
+
+---
+<img width="1894" height="860" alt="image" src="https://github.com/user-attachments/assets/6720c3d9-7d55-41bf-bc84-657f33a78264" />
+<img width="1536" height="870" alt="image" src="https://github.com/user-attachments/assets/aa62f8bf-6c89-443f-b608-0be4745b4b69" />
+
 ---
 
 ## 🧠 Project Overview
