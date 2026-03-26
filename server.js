@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 /* ===============================
    🤖 CHAT ROUTE
 ================================ */
-app.post("/", (req, res) => {
+app.post("/chat", (req, res) => {
   const { message } = req.body;
 
   if (!message) {
