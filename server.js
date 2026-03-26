@@ -4,29 +4,19 @@ const cors = require("cors");
 const app = express();
 
 /* ===============================
-   ✅ CORS CONFIGURATION (FIXED)
+   ✅ CORS (FINAL FIX)
 ================================ */
-const allowedOrigins = [
-  "https://peetlamahesh123.github.io",
-  "http://localhost:3000"
-];
+app.use(cors()); // allow all origins (best for deployment)
 
-app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin (Postman / mobile apps)
-    if (!origin) return callback(null, true);
-
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    } else {
-      return callback(null, true); // 🔥 allow all (safe fallback)
-    }
-  },
-  methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type"],
-}));
-
+/* ===============================
+   ✅ MIDDLEWARE
+================================ */
 app.use(express.json());
+
+/* ===============================
+   ✅ FAVICON FIX (NO 404 ERROR)
+================================ */
+app.get("/favicon.ico", (req, res) => res.status(204));
 
 /* ===============================
    ✅ HEALTH CHECK
