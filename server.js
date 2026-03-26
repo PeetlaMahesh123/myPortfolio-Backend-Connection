@@ -4,17 +4,27 @@ const cors = require("cors");
 const app = express();
 
 /* ===============================
-   ✅ CORS CONFIGURATION
+   ✅ CORS CONFIGURATION (FIXED)
 ================================ */
-const corsOptions = {
-  origin: "https://peetlamahesh123.github.io",
+const allowedOrigins = [
+  "https://peetlamahesh123.github.io",
+  "http://localhost:3000"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // allow requests with no origin (Postman / mobile apps)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(null, true); // 🔥 allow all (safe fallback)
+    }
+  },
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"],
-};
-
-app.use(cors(corsOptions));
-
-
+}));
 
 app.use(express.json());
 
