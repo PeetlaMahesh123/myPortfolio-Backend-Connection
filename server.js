@@ -3,7 +3,18 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+/* ===============================
+   ✅ CORS CONFIGURATION (FIXED)
+================================ */
+const corsOptions = {
+  origin: "https://peetlamahesh123.github.io", // your frontend URL
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // handle preflight
+
 app.use(express.json());
 
 /* ===============================
@@ -31,7 +42,7 @@ app.post("/chat", (req, res) => {
   if (msg.includes("about") || msg.includes("who are you") || msg.includes("introduce")) {
     return res.json({
       reply:
-        "Hi 👋 I'm Peetla Mahesh, an aspiring Software Developer skilled in Full-Stack Development, Java, Python, React.js, Spring Boot, MySQL, and MongoDB. I enjoy building scalable real-world applications and writing clean, maintainable code."
+        "Hi 👋 I'm Peetla Mahesh, an aspiring Software Developer skilled in Full-Stack Development, Java, Python, React.js, Spring Boot, MySQL, and MongoDB."
     });
   }
 
@@ -39,7 +50,7 @@ app.post("/chat", (req, res) => {
   if (msg.includes("skill") || msg.includes("technology") || msg.includes("tech stack")) {
     return res.json({
       reply:
-        "My technical skills include Java, Python, C, JavaScript, React.js, Spring Boot, Hibernate, Node.js (Basics), MySQL, MongoDB, REST APIs, Data Structures & Algorithms, and OOP."
+        "My skills include Java, Python, C, JavaScript, React.js, Spring Boot, Node.js (Basics), MySQL, MongoDB, REST APIs, and Data Structures."
     });
   }
 
@@ -47,7 +58,7 @@ app.post("/chat", (req, res) => {
   if (msg.includes("project")) {
     return res.json({
       reply:
-        "I have built several projects including Student Management System (JDBC), Hospital Management System, Shop Management System (Hibernate), React Todo App, Online Quiz Application, Guess Word Game, and AI-powered College Chatbot."
+        "Projects: Student Management System, Hospital Management System, Shop Management System, React Todo App, Online Quiz App, Guess Word Game, AI College Chatbot."
     });
   }
 
@@ -55,7 +66,7 @@ app.post("/chat", (req, res) => {
   if (msg.includes("education") || msg.includes("degree") || msg.includes("college")) {
     return res.json({
       reply:
-        "I am pursuing B.E in Computer Science and Engineering (2021-2025) at Akshaya College of Engineering and Technology with CGPA 8.24."
+        "I am pursuing B.E in Computer Science (2021-2025) with CGPA 8.24 at Akshaya College of Engineering and Technology."
     });
   }
 
@@ -63,7 +74,7 @@ app.post("/chat", (req, res) => {
   if (msg.includes("certificate") || msg.includes("achievement")) {
     return res.json({
       reply:
-        "I have earned certifications including Dr. Kalam Young Achiever Award, JPMorgan Chase Job Simulation, Cisco Network Essentials, MongoDB Atlas, ServiceNow Administrator, UiPath Automation, and AI Tools & ChatGPT Workshop."
+        "Certifications include Dr. Kalam Young Achiever Award, JPMorgan Simulation, Cisco Network Essentials, MongoDB Atlas, ServiceNow Admin, UiPath Automation."
     });
   }
 
@@ -71,12 +82,12 @@ app.post("/chat", (req, res) => {
   if (msg.includes("internship") || msg.includes("experience")) {
     return res.json({
       reply:
-        "I completed a Java Internship at Compad Systems, Hyderabad, where I gained hands-on experience in backend development and real-world software concepts."
+        "I completed a Java Internship at Compad Systems, Hyderabad with real-world backend experience."
     });
   }
 
   // Location
-  if (msg.includes("location") || msg.includes("address") || msg.includes("where")) {
+  if (msg.includes("location") || msg.includes("where")) {
     return res.json({
       reply:
         "I am from Tirupati, Andhra Pradesh, India."
@@ -87,22 +98,22 @@ app.post("/chat", (req, res) => {
   if (msg.includes("contact") || msg.includes("email") || msg.includes("phone")) {
     return res.json({
       reply:
-        "You can contact me at 📧 peetlamahesh81@gmail.com or 📱 +91 9182353829."
+        "Contact me at 📧 peetlamahesh81@gmail.com or 📱 +91 9182353829."
     });
   }
 
   // Availability
-  if (msg.includes("status") || msg.includes("available") || msg.includes("job") || msg.includes("opportunity")) {
+  if (msg.includes("job") || msg.includes("available") || msg.includes("opportunity")) {
     return res.json({
       reply:
-        "I am currently available for Software Development and Full Stack Development opportunities. Preferred locations: Bangalore, Hyderabad, Chennai. Available immediately."
+        "I am available for Software Developer roles in Bangalore, Hyderabad, and Chennai."
     });
   }
 
   // Default response
   return res.json({
     reply:
-      "Please ask about my skills, projects, education, certifications, internship, availability, or contact details."
+      "Ask about my skills, projects, education, internship, or contact details 😊"
   });
 });
 
