@@ -7,13 +7,14 @@ const app = express();
    ✅ CORS CONFIGURATION
 ================================ */
 const corsOptions = {
-  origin: "https://peetlamahesh123.github.io", // your frontend
+  origin: "https://peetlamahesh123.github.io",
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"],
 };
 
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // handle preflight
+
+
 
 app.use(express.json());
 
@@ -87,7 +88,7 @@ app.post("/chat", (req, res) => {
 });
 
 /* ===============================
-   ❌ 404 HANDLER (FIXED)
+   ❌ 404 HANDLER
 ================================ */
 app.use((req, res) => {
   res.status(404).json({
