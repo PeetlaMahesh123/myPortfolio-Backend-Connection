@@ -1,5 +1,5 @@
 
-# 🚀 MyPortfolio – AI Assistant Backend (Railway Deployment)
+# 🚀 MyPortfolio – AI Assistant Backend 
 
 An AI-powered backend service deployed on Railway that powers my portfolio chatbot.  
 This assistant answers questions about my skills, projects, experience, and career journey in real time.
