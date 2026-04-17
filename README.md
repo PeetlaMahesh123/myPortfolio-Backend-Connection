@@ -43,14 +43,6 @@ backend/
 
 ---
 
-## ⚙️ Tech Stack
-
-- Node.js
-- Express.js
-- OpenAI API
-- Railway
-- dotenv
-- CORS
 
 ---
 
