@@ -55,6 +55,14 @@ backend/
 ---
 
 ## 🔥 Railway Deployment Configuration
+### 1️⃣ Deploy from GitHub
+
+1. Go to Railway Dashboard  
+2. Click **New Project**  
+3. Choose **Deploy from GitHub**  
+4. Select this repository  
+
+Railway automatically detects Node.js.
 
 
 ---
