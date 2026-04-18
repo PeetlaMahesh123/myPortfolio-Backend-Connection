@@ -15,13 +15,7 @@ This assistant answers questions about my skills, projects, experience, and care
 
 ## 🧠 Project Overview
 
-This backend service connects my portfolio frontend with an AI model to:
 
-- 💬 Answer questions about me
-- 🧑‍💻 Explain my skills & tech stack
-- 📁 Describe my projects
-- 🎯 Share career goals
-- 🤖 Act as a personal portfolio assistant
 
 The backend is deployed using Railway and auto-deploys from GitHub.
 
