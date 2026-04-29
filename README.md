@@ -12,7 +12,14 @@ This assistant answers questions about my skills, projects, experience, and care
 <img width="1536" height="870" alt="image" src="https://github.com/user-attachments/assets/aa62f8bf-6c89-443f-b608-0be4745b4b69" />
 
 ---
+## 🧠 Project Overview
+This backend service connects my portfolio frontend with an AI model to:
 
+- 💬 Answer questions about me
+- 🧑‍💻 Explain my skills & tech stack
+- 📁 Describe my projects
+- 🎯 Share career goals
+- 🤖 Act as a personal portfolio assistant
 
 
 
