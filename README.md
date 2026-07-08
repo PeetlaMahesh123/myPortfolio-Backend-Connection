@@ -7,9 +7,6 @@ This assistant answers questions about my skills, projects, experience, and care
 
 ---
 ## Screenshots
-<img width="1923" height="879" alt="Screenshot 2026-03-22 183406" src="https://github.com/user-attachments/assets/eba7e5b7-f614-4728-882a-012ea4c8e801" />
-
-<img width="1536" height="870" alt="image" src="https://github.com/user-attachments/assets/aa62f8bf-6c89-443f-b608-0be4745b4b69" />
 
 ---
 ## 🧠 Project Overview
